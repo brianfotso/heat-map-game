@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Defeat the Heat | Strella</title>
+    <meta
+      name="description"
+      content="Place five heat circles to predict user behavior and see if you can Defeat the Heat."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow bg-glow-left" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-right" aria-hidden="true"></div>
+
+    <main class="app" aria-live="polite">
+      <header class="hero">
+        <p class="eyebrow">Heatmap Challenge</p>
+        <h1>Defeat the Heat</h1>
+        <p class="subhead">
+          Read your target customers' minds. Predict where user friction appears by placing 5 heat circles, then compare your instincts against real behavior.
+        </p>
+        <div class="hero-badges">
+          <span>UX Friction</span>
+          <span>Heatmaps</span>
+          <span>#DefeatTheHeat</span>
+          <span>AI Insights</span>
+        </div>
+      </header>
+
+      <section class="card prize shadow-orange" aria-label="Grand prize">
+        <h2 class="title-with-icon"><span class="md-icon" aria-hidden="true">emoji_events</span>Grand Prize</h2>
+        <p>
+          The top three players earn
+          <strong>1 free month of Strella</strong>
+          plus a fun winner spotlight on our socials.
+        </p>
+        <p class="prize-blurb">
+          Strella automatically tracks clicks, taps, and interaction patterns during prototype tests and overlays them as a heatmap on each screen. Hot areas show where users concentrate or struggle; cool areas show what they ignore - giving instant visibility into UX friction.
+        </p>
+        <div class="prize-actions">
+          <a class="btn btn-muted" href="https://www.strella.io" target="_blank" rel="noopener noreferrer">Learn more at Strella.io</a>
+          <a class="btn btn-accent" href="https://www.strella.io/request-a-demo" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+        </div>
+      </section>
+
+      <section class="dashboard-picker card shadow-lavender" aria-label="Choose dashboard">
+        <div class="picker-head">
+          <h2 class="title-with-icon"><span class="md-icon" aria-hidden="true">dashboard_customize</span>Choose A Dashboard Scenario</h2>
+        </div>
+        <div class="dashboard-grid">
+          <button class="dashboard-option active" data-dashboard="northstar" type="button">
+            <strong>Northstar Commerce OS</strong>
+            <span>Ecommerce conversion intelligence</span>
+          </button>
+          <button class="dashboard-option" data-dashboard="fleetpulse" type="button">
+            <strong>FleetPulse Control Center</strong>
+            <span>Logistics and dispatch operations</span>
+          </button>
+          <button class="dashboard-option" data-dashboard="caregrid" type="button">
+            <strong>CareGrid Clinical Insights</strong>
+            <span>Healthcare scheduling and throughput</span>
+          </button>
+          <button class="dashboard-option" data-dashboard="vaultix" type="button">
+            <strong>Vaultix Treasury IQ</strong>
+            <span>Fintech risk and liquidity management</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="game-shell" aria-label="Game area">
+        <div class="board-wrap">
+          <div class="board-toolbar" role="group" aria-label="Drawing controls">
+            <form id="email-gate-form" class="email-gate-form">
+              <input
+                id="work-email"
+                name="workEmail"
+                type="email"
+                placeholder="What's your work email?"
+                required
+                autocomplete="email"
+              />
+              <button id="start-btn" class="btn btn-muted" type="submit">Start Playing</button>
+            </form>
+            <p id="circle-counter" class="circle-counter">Heat Circles left: 5</p>
+            <div class="toolbar-actions">
+              <button id="clear-btn" class="btn btn-muted" type="button">Clear</button>
+              <button id="submit-btn" class="btn btn-primary" type="button">Score My Prediction</button>
+            </div>
+          </div>
+
+          <div class="canvas-stack" id="canvas-stack">
+            <canvas id="prototype-canvas" width="1280" height="720" aria-label="Prototype"></canvas>
+            <canvas id="prediction-canvas" width="1280" height="720" aria-label="Prediction layer"></canvas>
+            <canvas id="actual-canvas" width="1280" height="720" aria-label="Actual heatmap"></canvas>
+          </div>
+
+          <section class="card shadow-blue learn-strella" aria-label="Why use Strella">
+            <h2 class="title-with-icon"><span class="md-icon" aria-hidden="true">lightbulb</span>Why Teams Use Strella</h2>
+            <p>
+              Strella helps teams at <strong>Amazon</strong>, <strong>Nubank</strong>, <strong>Duolingo</strong>, <strong>Graza</strong>, <strong>DraftKings</strong>, and more move from guesswork to evidence by showing where users struggle in prototypes before launch.
+            </p>
+            <ul class="learn-list">
+              <li>See friction instantly with click, tap, and hesitation heatmaps.</li>
+              <li>Prioritize fixes by impact so teams ship better UX faster.</li>
+              <li>Turn findings into clear actions your team can execute right away.</li>
+            </ul>
+            <div class="learn-actions">
+              <a class="btn btn-muted" href="https://www.strella.io" target="_blank" rel="noopener noreferrer">Learn more at Strella.io</a>
+              <a class="btn btn-accent" href="https://www.strella.io/request-a-demo" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+            </div>
+          </section>
+        </div>
+
+        <aside class="panel" aria-label="Game information">
+          <section class="card shadow-blue">
+            <h2 class="title-with-icon"><span class="md-icon" aria-hidden="true">sports_esports</span>How To Play</h2>
+            <ol>
+              <li>Place exactly 5 heat circles where users will click, hover, or hesitate.</li>
+              <li>Submit your prediction to reveal the actual heatmap.</li>
+              <li>Score above 75 to defeat the heat.</li>
+            </ol>
+          </section>
+
+          <section class="card stats shadow-lime" id="results-card">
+            <h2 class="title-with-icon"><span class="md-icon" aria-hidden="true">query_stats</span>Score</h2>
+            <div class="score-row">
+              <span class="metric-label">Accuracy</span>
+              <span class="metric-value" id="accuracy-value">-</span>
+            </div>
+            <div class="score-row">
+              <span class="metric-label">Overlap</span>
+              <span class="metric-value" id="overlap-value">-</span>
+            </div>
+            <div class="score-row">
+              <span class="metric-label">Misses</span>
+              <span class="metric-value" id="miss-value">-</span>
+            </div>
+            <p id="result-message" class="result-message">Place 5 circles to begin.</p>
+            <button id="share-btn" class="btn btn-accent" type="button" disabled>Share</button>
+          </section>
+
+          <section class="card shadow-lavender">
+            <h2 class="title-with-icon"><span class="md-icon" aria-hidden="true">leaderboard</span>Leaderboard</h2>
+            <form id="name-form" class="name-form">
+              <label for="player-name">Name</label>
+              <input id="player-name" name="playerName" maxlength="20" placeholder="Enter your name" required />
+              <button class="btn btn-muted" type="submit">Save Score</button>
+            </form>
+            <ul id="leaderboard" class="leaderboard"></ul>
+          </section>
+
+        </aside>
+      </section>
+
+    </main>
+
+    <template id="leaderboard-item-template">
+      <li class="leaderboard-item">
+        <span class="lb-name"></span>
+        <span class="lb-score"></span>
+      </li>
+    </template>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

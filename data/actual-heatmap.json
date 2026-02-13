@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "description": "Synthetic user interaction heatmap for Defeat the Heat demo.",
+  "points": [
+    { "x": 1128, "y": 340, "radius": 125, "intensity": 1.0 },
+    { "x": 978, "y": 193, "radius": 105, "intensity": 0.78 },
+    { "x": 660, "y": 193, "radius": 115, "intensity": 0.68 },
+    { "x": 505, "y": 318, "radius": 120, "intensity": 0.58 },
+    { "x": 722, "y": 502, "radius": 148, "intensity": 0.66 },
+    { "x": 986, "y": 438, "radius": 118, "intensity": 0.57 },
+    { "x": 170, "y": 316, "radius": 92, "intensity": 0.42 },
+    { "x": 164, "y": 465, "radius": 88, "intensity": 0.33 }
+  ]
+}
