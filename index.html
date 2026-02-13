@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Defeat the Heat | Strella</title>
+    <title>Defeat the Heat | Heatmap Challenge</title>
     <meta
       name="description"
       content="Place five heat circles to predict user behavior and see if you can Defeat the Heat."
@@ -47,25 +47,10 @@
 
       <section class="dashboard-picker card shadow-lavender" aria-label="Choose dashboard">
         <div class="picker-head">
-          <h2 class="title-with-icon"><span class="md-icon" aria-hidden="true">dashboard_customize</span>Choose A Dashboard Scenario</h2>
+          <h2 class="title-with-icon"><span class="md-icon" aria-hidden="true">dashboard_customize</span>Choose a Dashboard</h2>
         </div>
-        <div class="dashboard-grid">
-          <button class="dashboard-option active" data-dashboard="northstar" type="button">
-            <strong>Northstar Commerce OS</strong>
-            <span>Ecommerce conversion intelligence</span>
-          </button>
-          <button class="dashboard-option" data-dashboard="fleetpulse" type="button">
-            <strong>FleetPulse Control Center</strong>
-            <span>Logistics and dispatch operations</span>
-          </button>
-          <button class="dashboard-option" data-dashboard="caregrid" type="button">
-            <strong>CareGrid Clinical Insights</strong>
-            <span>Healthcare scheduling and throughput</span>
-          </button>
-          <button class="dashboard-option" data-dashboard="vaultix" type="button">
-            <strong>Vaultix Treasury IQ</strong>
-            <span>Fintech risk and liquidity management</span>
-          </button>
+        <div class="dashboard-scroll" id="dashboard-scroll" aria-label="Available dashboards">
+          <!-- Previews are injected here by script.js -->
         </div>
       </section>
 
@@ -86,7 +71,6 @@
             <p id="circle-counter" class="circle-counter">Heat Circles left: 5</p>
             <div class="toolbar-actions">
               <button id="clear-btn" class="btn btn-muted" type="button">Clear</button>
-              <button id="submit-btn" class="btn btn-primary" type="button">Score My Prediction</button>
             </div>
           </div>
 
@@ -138,7 +122,10 @@
               <span class="metric-value" id="miss-value">-</span>
             </div>
             <p id="result-message" class="result-message">Place 5 circles to begin.</p>
-            <button id="share-btn" class="btn btn-accent" type="button" disabled>Share</button>
+            <button id="share-btn" class="btn btn-accent btn-with-icon" type="button" disabled>
+              <span class="md-icon" aria-hidden="true">share</span>
+              <span>Share</span>
+            </button>
           </section>
 
           <section class="card shadow-lavender">
@@ -146,7 +133,7 @@
             <form id="name-form" class="name-form">
               <label for="player-name">Name</label>
               <input id="player-name" name="playerName" maxlength="20" placeholder="Enter your name" required />
-              <button class="btn btn-muted" type="submit">Save Score</button>
+                <button class="btn btn-muted" type="submit">Post Score</button>
             </form>
             <ul id="leaderboard" class="leaderboard"></ul>
           </section>
